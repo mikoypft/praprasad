@@ -138,9 +138,9 @@ public class Registration extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					Class.forName("com.mysql.jdbc.Driver");
-					Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/login","root","");
+					Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/sad","root","");
 					Statement stmt=con.createStatement();
-					String sql="Select * from admin where UserName ='"+user.getText()+"'and Password='"+pass.getText().toString()+"'";
+					String sql="Select * from admin_login where UserName ='"+user.getText()+"'and Password='"+pass.getText().toString()+"'";
 					ResultSet rs=stmt.executeQuery(sql);
 					if(rs.next())
 						JOptionPane.showMessageDialog(null, "Login Successfully");
