@@ -12,6 +12,11 @@ import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JTextField;
@@ -30,12 +35,12 @@ import java.awt.Canvas;
 public class Home extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
+	private JTextField name;
+	private JTextField homadd;
+	private JTextField proadd;
+	private JTextField homnum;
+	private JTextField offnum;
+	private JTextField mobnum;
 	JPanel patrec = new JPanel();
 	boolean prapra = false;
 
@@ -66,6 +71,7 @@ public class Home extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
 		
 		JButton btnNewButton = new JButton("");
 		
@@ -208,220 +214,159 @@ public class Home extends JFrame {
 		lblNewLabel.setBounds(0, 0, 225, 661);
 		contentPane.add(lblNewLabel);
 		
-		JPanel panel = new JPanel();
-		panel.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		panel.setBackground(Color.WHITE);
-		panel.setBounds(225, 0, 759, 661);
-		contentPane.add(panel);
-		panel.setLayout(null);
 		
-		JLabel lblNewLabel_5 = new JLabel("");
-		lblNewLabel_5.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		lblNewLabel_5.setBounds(59, 100, 20, 10);
-		panel.add(lblNewLabel_5);
+		JPanel basinf = new JPanel();
+		basinf.setBackground(new Color(255, 255, 255));
+		basinf.setBounds(225, 0, 759, 661);
+		contentPane.add(basinf);
+		basinf.setLayout(null);
 		
-		JLabel lblNewLabel_6 = new JLabel("");
-		lblNewLabel_6.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		lblNewLabel_6.setRequestFocusEnabled(false);
-		lblNewLabel_6.setBounds(50, 109, 10, 20);
-		panel.add(lblNewLabel_6);
 		
-		JLabel label_5 = new JLabel("");
-		label_5.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_5.setBounds(59, 128, 20, 10);
-		panel.add(label_5);
+		JLabel lblPatientsBasicInformation = new JLabel("PATIENT'S BASIC INFORMATION");
+		lblPatientsBasicInformation.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblPatientsBasicInformation.setBounds(49, 50, 600, 25);
+		basinf.add(lblPatientsBasicInformation);
 		
-		JLabel label_6 = new JLabel("");
-		label_6.setRequestFocusEnabled(false);
-		label_6.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_6.setBounds(78, 109, 10, 20);
-		panel.add(label_6);
+		JLabel lblName = new JLabel("NAME");
+		lblName.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblName.setBounds(49, 150, 46, 14);
+		basinf.add(lblName);
 		
-		JLabel lblNewLabel_7 = new JLabel("");
-		lblNewLabel_7.setBounds(59, 109, 20, 20);
-		panel.add(lblNewLabel_7);
+		JLabel lblDateOfBirth = new JLabel("DATE OF BIRTH");
+		lblDateOfBirth.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblDateOfBirth.setBounds(49, 200, 125, 15);
+		basinf.add(lblDateOfBirth);
 		
-		JLabel label_7 = new JLabel("");
-		label_7.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_7.setBounds(118, 210, 20, 10);
-		panel.add(label_7);
+		JComboBox month = new JComboBox();
+		month.setModel(new DefaultComboBoxModel(Month.values()));
+		month.setBounds(174, 195, 100, 25);
+		basinf.add(month);
 		
-		JLabel label_8 = new JLabel("");
-		label_8.setRequestFocusEnabled(false);
-		label_8.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_8.setBounds(109, 219, 10, 20);
-		panel.add(label_8);
+		JLabel lblSex = new JLabel("SEX");
+		lblSex.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblSex.setBounds(49, 250, 46, 14);
+		basinf.add(lblSex);
 		
-		JLabel label_9 = new JLabel("");
-		label_9.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_9.setBounds(118, 238, 20, 10);
-		panel.add(label_9);
+		JLabel lblHomeAddress = new JLabel("HOME ADDRESS");
+		lblHomeAddress.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblHomeAddress.setForeground(new Color(0, 0, 0));
+		lblHomeAddress.setBounds(49, 300, 125, 15);
+		basinf.add(lblHomeAddress);
 		
-		JLabel label_10 = new JLabel("");
-		label_10.setRequestFocusEnabled(false);
-		label_10.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_10.setBounds(137, 219, 10, 20);
-		panel.add(label_10);
+		JLabel lblProvincialAddress = new JLabel("PROVINCIAL ADDRESS");
+		lblProvincialAddress.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblProvincialAddress.setBounds(49, 350, 175, 15);
+		basinf.add(lblProvincialAddress);
 		
-		JLabel label_11 = new JLabel("");
-		label_11.setBounds(119, 221, 19, 18);
-		panel.add(label_11);
+		JLabel lblContactNumbers = new JLabel("CONTACT NUMBERS:");
+		lblContactNumbers.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblContactNumbers.setBounds(49, 400, 175, 15);
+		basinf.add(lblContactNumbers);
 		
-		JLabel label_12 = new JLabel("");
-		label_12.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_12.setBounds(535, 321, 20, 10);
-		panel.add(label_12);
+		JLabel lblNewLabel_4 = new JLabel("HOME:");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.ITALIC, 15));
+		lblNewLabel_4.setBounds(74, 450, 50, 15);
+		basinf.add(lblNewLabel_4);
 		
-		JLabel label_13 = new JLabel("");
-		label_13.setRequestFocusEnabled(false);
-		label_13.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_13.setBounds(526, 330, 10, 20);
-		panel.add(label_13);
+		JLabel lblOffice = new JLabel("OFFICE:");
+		lblOffice.setFont(new Font("Tahoma", Font.ITALIC, 15));
+		lblOffice.setBounds(74, 500, 75, 15);
+		basinf.add(lblOffice);
 		
-		JLabel label_14 = new JLabel("");
-		label_14.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_14.setBounds(535, 349, 20, 10);
-		panel.add(label_14);
+		JLabel lblMobile = new JLabel("MOBILE:");
+		lblMobile.setFont(new Font("Tahoma", Font.ITALIC, 15));
+		lblMobile.setBounds(74, 550, 75, 15);
+		basinf.add(lblMobile);
 		
-		JLabel label_15 = new JLabel("");
-		label_15.setRequestFocusEnabled(false);
-		label_15.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_15.setBounds(554, 330, 10, 20);
-		panel.add(label_15);
+		name = new JTextField();
+		name.setFont(new Font("Tahoma", Font.BOLD, 15));
+		name.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		name.setBounds(124, 145, 500, 25);
+		basinf.add(name);
+		name.setColumns(10);
 		
-		JLabel label_16 = new JLabel("");
-		label_16.setBounds(536, 332, 20, 20);
-		panel.add(label_16);
+		JComboBox date = new JComboBox();
+		date.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		date.setBounds(299, 195, 100, 25);
+		basinf.add(date);
 		
-		JLabel label_17 = new JLabel("");
-		label_17.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_17.setBounds(222, 100, 20, 10);
-		panel.add(label_17);
+		JComboBox year = new JComboBox();
+		year.setModel(new DefaultComboBoxModel(new String[] {"2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", "1939", "1938", "1937", "1936", "1935", "1934", "1933", "1932", "1931", "1930", "1929", "1928", "1927", "1926", "1925", "1924", "1923", "1922", "1921", "1920", "1919"}));
+		year.setBounds(424, 195, 100, 25);
+		basinf.add(year);
 		
-		JLabel label_18 = new JLabel("");
-		label_18.setRequestFocusEnabled(false);
-		label_18.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_18.setBounds(213, 109, 10, 20);
-		panel.add(label_18);
+		JComboBox sex = new JComboBox();
+		sex.setModel(new DefaultComboBoxModel(new String[] {"Male ", "Female"}));
+		sex.setBounds(99, 245, 100, 25);
+		basinf.add(sex);
 		
-		JLabel label_19 = new JLabel("");
-		label_19.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_19.setBounds(222, 128, 20, 10);
-		panel.add(label_19);
+		homadd = new JTextField();
+		homadd.setFont(new Font("Tahoma", Font.BOLD, 15));
+		homadd.setColumns(10);
+		homadd.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		homadd.setBounds(199, 295, 500, 25);
+		basinf.add(homadd);
 		
-		JLabel label_20 = new JLabel("");
-		label_20.setRequestFocusEnabled(false);
-		label_20.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_20.setBounds(241, 109, 10, 20);
-		panel.add(label_20);
+		proadd = new JTextField();
+		proadd.setFont(new Font("Tahoma", Font.BOLD, 15));
+		proadd.setColumns(10);
+		proadd.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		proadd.setBounds(249, 345, 500, 25);
+		basinf.add(proadd);
 		
-		JLabel label_21 = new JLabel("");
-		label_21.setBounds(222, 110, 20, 20);
-		panel.add(label_21);
+		homnum = new JTextField();
+		homnum.setFont(new Font("Tahoma", Font.BOLD, 15));
+		homnum.setColumns(10);
+		homnum.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		homnum.setBounds(149, 445, 500, 25);
+		basinf.add(homnum);
 		
-		JLabel label_22 = new JLabel("");
-		label_22.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_22.setBounds(270, 100, 20, 10);
-		panel.add(label_22);
+		offnum = new JTextField();
+		offnum.setFont(new Font("Tahoma", Font.BOLD, 15));
+		offnum.setColumns(10);
+		offnum.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		offnum.setBounds(149, 495, 500, 25);
+		basinf.add(offnum);
 		
-		JLabel label_23 = new JLabel("");
-		label_23.setRequestFocusEnabled(false);
-		label_23.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_23.setBounds(261, 109, 10, 20);
-		panel.add(label_23);
+		mobnum = new JTextField();
+		mobnum.setFont(new Font("Tahoma", Font.BOLD, 15));
+		mobnum.setColumns(10);
+		mobnum.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		mobnum.setBounds(149, 545, 500, 25);
+		basinf.add(mobnum);
 		
-		JLabel label_24 = new JLabel("");
-		label_24.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_24.setBounds(270, 128, 20, 10);
-		panel.add(label_24);
+		JButton btnNewButton_2 = new JButton("NEXT");
 		
-		JLabel label_25 = new JLabel("");
-		label_25.setRequestFocusEnabled(false);
-		label_25.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_25.setBounds(289, 109, 10, 20);
-		panel.add(label_25);
+		btnNewButton_2.setBorder(null);
+		btnNewButton_2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+			}
+		});
+		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_2.setContentAreaFilled(false);
+		btnNewButton_2.setOpaque(false);
+		btnNewButton_2.setBorder(null);
+		btnNewButton_2.setBounds(627, 605, 89, 23);
+		basinf.add(btnNewButton_2);
 		
-		JLabel label_26 = new JLabel("");
-		label_26.setBounds(270, 109, 20, 20);
-		panel.add(label_26);
+		JButton btnBack = new JButton("BACK");
+		btnBack.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnBack.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
+		});
 		
-		JLabel label_27 = new JLabel("");
-		label_27.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_27.setBounds(318, 100, 20, 10);
-		panel.add(label_27);
+		btnBack.setOpaque(false);
+		btnBack.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnBack.setContentAreaFilled(false);
+		btnBack.setBorder(null);
+		btnBack.setBounds(49, 607, 89, 23);
+		basinf.add(btnBack);
+		basinf.setVisible(false);
 		
-		JLabel label_28 = new JLabel("");
-		label_28.setRequestFocusEnabled(false);
-		label_28.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_28.setBounds(309, 109, 10, 20);
-		panel.add(label_28);
-		
-		JLabel label_29 = new JLabel("");
-		label_29.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_29.setBounds(318, 128, 20, 10);
-		panel.add(label_29);
-		
-		JLabel label_30 = new JLabel("");
-		label_30.setRequestFocusEnabled(false);
-		label_30.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_30.setBounds(337, 109, 10, 20);
-		panel.add(label_30);
-		
-		JLabel label_31 = new JLabel("");
-		label_31.setBounds(318, 109, 20, 20);
-		panel.add(label_31);
-		
-		JLabel label_32 = new JLabel("");
-		label_32.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_32.setBounds(366, 100, 20, 10);
-		panel.add(label_32);
-		
-		JLabel label_33 = new JLabel("");
-		label_33.setRequestFocusEnabled(false);
-		label_33.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_33.setBounds(357, 109, 10, 20);
-		panel.add(label_33);
-		
-		JLabel label_34 = new JLabel("");
-		label_34.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_34.setBounds(366, 128, 20, 10);
-		panel.add(label_34);
-		
-		JLabel label_35 = new JLabel("");
-		label_35.setRequestFocusEnabled(false);
-		label_35.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_35.setBounds(385, 109, 10, 20);
-		panel.add(label_35);
-		
-		JLabel label_36 = new JLabel("");
-		label_36.setBounds(366, 109, 20, 20);
-		panel.add(label_36);
-		
-		JLabel label_37 = new JLabel("");
-		label_37.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_37.setBounds(509, 100, 20, 10);
-		panel.add(label_37);
-		
-		JLabel label_38 = new JLabel("");
-		label_38.setRequestFocusEnabled(false);
-		label_38.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_38.setBounds(500, 109, 10, 20);
-		panel.add(label_38);
-		
-		JLabel label_39 = new JLabel("");
-		label_39.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_39.setBounds(509, 128, 20, 10);
-		panel.add(label_39);
-		
-		JLabel label_40 = new JLabel("");
-		label_40.setRequestFocusEnabled(false);
-		label_40.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
-		label_40.setBounds(528, 109, 10, 20);
-		panel.add(label_40);
-		
-		JLabel label_41 = new JLabel("");
-		label_41.setBounds(509, 109, 20, 20);
-		panel.add(label_41);
 		
 		JPanel medhis = new JPanel();
 		medhis.setBackground(Color.WHITE);
@@ -560,159 +505,6 @@ public class Home extends JFrame {
 		medhis.add(btnBack_1);
 		medhis.setVisible(false);
 		
-		
-		JPanel basinf = new JPanel();
-		basinf.setBackground(new Color(255, 255, 255));
-		basinf.setBounds(225, 0, 759, 661);
-		contentPane.add(basinf);
-		basinf.setLayout(null);
-		
-		
-		JLabel lblPatientsBasicInformation = new JLabel("PATIENT'S BASIC INFORMATION");
-		lblPatientsBasicInformation.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblPatientsBasicInformation.setBounds(49, 50, 600, 25);
-		basinf.add(lblPatientsBasicInformation);
-		
-		JLabel lblName = new JLabel("NAME");
-		lblName.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblName.setBounds(49, 150, 46, 14);
-		basinf.add(lblName);
-		
-		JLabel lblDateOfBirth = new JLabel("DATE OF BIRTH");
-		lblDateOfBirth.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblDateOfBirth.setBounds(49, 200, 125, 15);
-		basinf.add(lblDateOfBirth);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(Month.values()));
-		comboBox.setBounds(174, 195, 100, 25);
-		basinf.add(comboBox);
-		
-		JLabel lblSex = new JLabel("SEX");
-		lblSex.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblSex.setBounds(49, 250, 46, 14);
-		basinf.add(lblSex);
-		
-		JLabel lblHomeAddress = new JLabel("HOME ADDRESS");
-		lblHomeAddress.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblHomeAddress.setForeground(new Color(0, 0, 0));
-		lblHomeAddress.setBounds(49, 300, 125, 15);
-		basinf.add(lblHomeAddress);
-		
-		JLabel lblProvincialAddress = new JLabel("PROVINCIAL ADDRESS");
-		lblProvincialAddress.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblProvincialAddress.setBounds(49, 350, 175, 15);
-		basinf.add(lblProvincialAddress);
-		
-		JLabel lblContactNumbers = new JLabel("CONTACT NUMBERS:");
-		lblContactNumbers.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblContactNumbers.setBounds(49, 400, 175, 15);
-		basinf.add(lblContactNumbers);
-		
-		JLabel lblNewLabel_4 = new JLabel("HOME:");
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.ITALIC, 15));
-		lblNewLabel_4.setBounds(74, 450, 50, 15);
-		basinf.add(lblNewLabel_4);
-		
-		JLabel lblOffice = new JLabel("OFFICE:");
-		lblOffice.setFont(new Font("Tahoma", Font.ITALIC, 15));
-		lblOffice.setBounds(74, 500, 75, 15);
-		basinf.add(lblOffice);
-		
-		JLabel lblMobile = new JLabel("MOBILE:");
-		lblMobile.setFont(new Font("Tahoma", Font.ITALIC, 15));
-		lblMobile.setBounds(74, 550, 75, 15);
-		basinf.add(lblMobile);
-		
-		textField = new JTextField();
-		textField.setFont(new Font("Tahoma", Font.BOLD, 15));
-		textField.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		textField.setBounds(124, 145, 500, 25);
-		basinf.add(textField);
-		textField.setColumns(10);
-		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
-		comboBox_1.setBounds(299, 195, 100, 25);
-		basinf.add(comboBox_1);
-		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", "1939", "1938", "1937", "1936", "1935", "1934", "1933", "1932", "1931", "1930", "1929", "1928", "1927", "1926", "1925", "1924", "1923", "1922", "1921", "1920", "1919"}));
-		comboBox_2.setBounds(424, 195, 100, 25);
-		basinf.add(comboBox_2);
-		
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"Male ", "Female"}));
-		comboBox_3.setBounds(99, 245, 100, 25);
-		basinf.add(comboBox_3);
-		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Tahoma", Font.BOLD, 15));
-		textField_1.setColumns(10);
-		textField_1.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		textField_1.setBounds(199, 295, 500, 25);
-		basinf.add(textField_1);
-		
-		textField_2 = new JTextField();
-		textField_2.setFont(new Font("Tahoma", Font.BOLD, 15));
-		textField_2.setColumns(10);
-		textField_2.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		textField_2.setBounds(249, 345, 500, 25);
-		basinf.add(textField_2);
-		
-		textField_3 = new JTextField();
-		textField_3.setFont(new Font("Tahoma", Font.BOLD, 15));
-		textField_3.setColumns(10);
-		textField_3.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		textField_3.setBounds(149, 445, 500, 25);
-		basinf.add(textField_3);
-		
-		textField_4 = new JTextField();
-		textField_4.setFont(new Font("Tahoma", Font.BOLD, 15));
-		textField_4.setColumns(10);
-		textField_4.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		textField_4.setBounds(149, 495, 500, 25);
-		basinf.add(textField_4);
-		
-		textField_5 = new JTextField();
-		textField_5.setFont(new Font("Tahoma", Font.BOLD, 15));
-		textField_5.setColumns(10);
-		textField_5.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		textField_5.setBounds(149, 545, 500, 25);
-		basinf.add(textField_5);
-		
-		JButton btnNewButton_2 = new JButton("NEXT");
-		
-		btnNewButton_2.setBorder(null);
-		btnNewButton_2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnNewButton_2.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent arg0) {
-			}
-		});
-		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnNewButton_2.setContentAreaFilled(false);
-		btnNewButton_2.setOpaque(false);
-		btnNewButton_2.setBorder(null);
-		btnNewButton_2.setBounds(627, 605, 89, 23);
-		basinf.add(btnNewButton_2);
-		
-		JButton btnBack = new JButton("BACK");
-		btnBack.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnBack.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-			}
-		});
-		
-		btnBack.setOpaque(false);
-		btnBack.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnBack.setContentAreaFilled(false);
-		btnBack.setBorder(null);
-		btnBack.setBounds(49, 607, 89, 23);
-		basinf.add(btnBack);
-		basinf.setVisible(false);
-		
 		JPanel patrec_1 = new JPanel();
 		patrec_1.setBackground(new Color(255, 255, 255));
 		patrec_1.setBounds(225, 0, 759, 661);
@@ -761,20 +553,6 @@ public class Home extends JFrame {
 				patrec_1.hide();
 			}
 		});
-		btnBack.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
-			public void actionPerformed(ActionEvent e) {
-				basinf.hide();
-				patrec_1.show();
-			}
-		});
-		btnNewButton_2.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
-			public void actionPerformed(ActionEvent e) {
-				medhis.show();
-				basinf.hide();
-			}
-		});
 		btnBack_1.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
@@ -789,6 +567,36 @@ public class Home extends JFrame {
 				medhis.hide();
 				patrec_1.hide();
 			}
+		});
+		btnBack.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+				basinf.hide();
+				patrec_1.show();
+			}
+		});
+		btnNewButton_2.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+				
+					try {
+						Class.forName("com.mysql.jdbc.Driver");
+						Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/sad","root","");
+						Statement stmt=con.createStatement();
+						String sql="INSERT INTO `patinf`(`id`, `Name`, `Month`, `Date`, `Year`, `Sex`, `Home Add`, `Prov Add`, `Home Num`, `Off Num`, `Mob Num`) VALUES ([value-1],['"+name.getText()+"'],['"+month.getSelectedItem().toString()+"'],['"+date.getSelectedItem().toString()+"'],['"+year.getSelectedItem().toString()+"'],['"+sex.getSelectedItem().toString()+"'],['"+homadd.getText()+"'],['"+proadd.getText()+"'],['"+homnum.getText()+"'],['"+offnum.getText()+"'],['"+mobnum.getText()+"'])";
+					} catch (ClassNotFoundException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
+					medhis.show();
+					basinf.hide();
+			}
+			
+				
 		});
 		setUndecorated(false);
 	}
