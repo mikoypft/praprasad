@@ -23,6 +23,8 @@ import javax.swing.border.MatteBorder;
 import java.time.Month;
 import javax.swing.JTable;
 import javax.swing.JCheckBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Home extends JFrame {
 
@@ -33,6 +35,8 @@ public class Home extends JFrame {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTextField textField_5;
+	JPanel patrec = new JPanel();
+	boolean prapra = false;
 
 	/**
 	 * Launch the application.
@@ -63,6 +67,8 @@ public class Home extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("");
+		
+		
 		btnNewButton.setBorder(null);
 		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnNewButton.addMouseListener(new MouseAdapter() {
@@ -115,6 +121,10 @@ public class Home extends JFrame {
 		button_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				dispose();
 			}
 		});
 		button_2.setContentAreaFilled(false);
@@ -195,6 +205,34 @@ public class Home extends JFrame {
 		lblNewLabel.setOpaque(true);
 		lblNewLabel.setBounds(0, 0, 225, 661);
 		contentPane.add(lblNewLabel);
+		
+		JPanel patrec_1 = new JPanel();
+		patrec_1.setBackground(new Color(255, 255, 255));
+		patrec_1.setBounds(225, 0, 759, 661);
+		contentPane.add(patrec_1);
+		patrec_1.setLayout(null);
+		
+		JLabel label_4 = new JLabel("");
+		label_4.setIcon(new ImageIcon(Home.class.getResource("userbig3.png")));
+		label_4.setBounds(233, 48, 256, 256);
+		patrec_1.add(label_4);
+		
+		JLabel lblNewLabel_3 = new JLabel("VIEW EXISTING RECORDS");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblNewLabel_3.setBounds(171, 395, 400, 25);
+		patrec_1.add(lblNewLabel_3);
+		
+		JLabel lblCreateNewRecord = new JLabel("CREATE NEW RECORD");
+		lblCreateNewRecord.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblCreateNewRecord.setBounds(203, 484, 400, 25);
+		patrec_1.add(lblCreateNewRecord);
+		
+		JButton btnNewButton_4 = new JButton("");
+		
+		btnNewButton_4.setContentAreaFilled(false);
+		btnNewButton_4.setBounds(191, 471, 357, 50);
+		patrec_1.add(btnNewButton_4);
+		patrec_1.setVisible(false);
 		
 		JPanel medhis = new JPanel();
 		medhis.setBackground(Color.WHITE);
@@ -318,28 +356,6 @@ public class Home extends JFrame {
 		btnNewButton_3.setBounds(328, 562, 89, 23);
 		medhis.add(btnNewButton_3);
 		medhis.setVisible(false);
-		
-		JPanel patrec = new JPanel();
-		patrec.setBackground(new Color(255, 255, 255));
-		patrec.setBounds(225, 0, 759, 661);
-		contentPane.add(patrec);
-		patrec.setLayout(null);
-		
-		JLabel label_4 = new JLabel("");
-		label_4.setIcon(new ImageIcon(Home.class.getResource("userbig3.png")));
-		label_4.setBounds(233, 48, 256, 256);
-		patrec.add(label_4);
-		
-		JLabel lblNewLabel_3 = new JLabel("VIEW EXISTING RECORDS");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblNewLabel_3.setBounds(171, 395, 400, 25);
-		patrec.add(lblNewLabel_3);
-		
-		JLabel lblCreateNewRecord = new JLabel("CREATE NEW RECORD");
-		lblCreateNewRecord.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblCreateNewRecord.setBounds(203, 484, 400, 25);
-		patrec.add(lblCreateNewRecord);
-		patrec.setVisible(false);
 		
 		
 		JPanel basinf = new JPanel();
@@ -476,8 +492,18 @@ public class Home extends JFrame {
 		btnNewButton_2.setBorder(null);
 		btnNewButton_2.setBounds(321, 603, 89, 23);
 		basinf.add(btnNewButton_2);
-		basinf.setVisible(true);
-		
+		basinf.setVisible(false);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				patrec_1.show();
+			}
+		});
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				basinf.show();
+				patrec_1.hide();
+			}
+		});
 		
 		
 		setUndecorated(false);

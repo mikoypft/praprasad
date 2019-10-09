@@ -53,7 +53,7 @@ public class Registration extends JFrame {
 	 */
 	public Registration() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(200, 100, 848, 468);
+		setBounds(250, 150, 848, 468);
 		contentPane = new JPanel();
 		contentPane.setFont(new Font("Tahoma", Font.BOLD, 15));
 		contentPane.setBackground(Color.WHITE);
