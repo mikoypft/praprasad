@@ -56,7 +56,7 @@ public class Registration extends JFrame {
 		setBounds(200, 100, 848, 468);
 		contentPane = new JPanel();
 		contentPane.setFont(new Font("Tahoma", Font.BOLD, 15));
-		contentPane.setBackground(new Color(230, 230, 250));
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -87,6 +87,7 @@ public class Registration extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("<html>Mateo <br> Dental Clinic<br> Database System</html>");
+		lblNewLabel_2.setBackground(Color.WHITE);
 		lblNewLabel_2.setOpaque(true);
 		lblNewLabel_2.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -142,8 +143,10 @@ public class Registration extends JFrame {
 					Statement stmt=con.createStatement();
 					String sql="Select * from admin_login where UserName ='"+user.getText()+"'and Password='"+pass.getText().toString()+"'";
 					ResultSet rs=stmt.executeQuery(sql);
-					if(rs.next())
+					if(rs.next()) {
 						JOptionPane.showMessageDialog(null, "Login Successfully");
+					dispose();                 
+					new Home().setVisible(true);}
 					else
 						JOptionPane.showMessageDialog(null, "Incorrect Username and Password");
 					con.close();
