@@ -25,6 +25,7 @@ import javax.swing.JTable;
 import javax.swing.JCheckBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Canvas;
 
 public class Home extends JFrame {
 
@@ -81,6 +82,7 @@ public class Home extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("");
+		
 		btnNewButton_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
@@ -206,33 +208,220 @@ public class Home extends JFrame {
 		lblNewLabel.setBounds(0, 0, 225, 661);
 		contentPane.add(lblNewLabel);
 		
-		JPanel patrec_1 = new JPanel();
-		patrec_1.setBackground(new Color(255, 255, 255));
-		patrec_1.setBounds(225, 0, 759, 661);
-		contentPane.add(patrec_1);
-		patrec_1.setLayout(null);
+		JPanel panel = new JPanel();
+		panel.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(225, 0, 759, 661);
+		contentPane.add(panel);
+		panel.setLayout(null);
 		
-		JLabel label_4 = new JLabel("");
-		label_4.setIcon(new ImageIcon(Home.class.getResource("userbig3.png")));
-		label_4.setBounds(233, 48, 256, 256);
-		patrec_1.add(label_4);
+		JLabel lblNewLabel_5 = new JLabel("");
+		lblNewLabel_5.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		lblNewLabel_5.setBounds(59, 100, 20, 10);
+		panel.add(lblNewLabel_5);
 		
-		JLabel lblNewLabel_3 = new JLabel("VIEW EXISTING RECORDS");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblNewLabel_3.setBounds(171, 395, 400, 25);
-		patrec_1.add(lblNewLabel_3);
+		JLabel lblNewLabel_6 = new JLabel("");
+		lblNewLabel_6.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		lblNewLabel_6.setRequestFocusEnabled(false);
+		lblNewLabel_6.setBounds(50, 109, 10, 20);
+		panel.add(lblNewLabel_6);
 		
-		JLabel lblCreateNewRecord = new JLabel("CREATE NEW RECORD");
-		lblCreateNewRecord.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblCreateNewRecord.setBounds(203, 484, 400, 25);
-		patrec_1.add(lblCreateNewRecord);
+		JLabel label_5 = new JLabel("");
+		label_5.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_5.setBounds(59, 128, 20, 10);
+		panel.add(label_5);
 		
-		JButton btnNewButton_4 = new JButton("");
+		JLabel label_6 = new JLabel("");
+		label_6.setRequestFocusEnabled(false);
+		label_6.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_6.setBounds(78, 109, 10, 20);
+		panel.add(label_6);
 		
-		btnNewButton_4.setContentAreaFilled(false);
-		btnNewButton_4.setBounds(191, 471, 357, 50);
-		patrec_1.add(btnNewButton_4);
-		patrec_1.setVisible(false);
+		JLabel lblNewLabel_7 = new JLabel("");
+		lblNewLabel_7.setBounds(59, 109, 20, 20);
+		panel.add(lblNewLabel_7);
+		
+		JLabel label_7 = new JLabel("");
+		label_7.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_7.setBounds(118, 210, 20, 10);
+		panel.add(label_7);
+		
+		JLabel label_8 = new JLabel("");
+		label_8.setRequestFocusEnabled(false);
+		label_8.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_8.setBounds(109, 219, 10, 20);
+		panel.add(label_8);
+		
+		JLabel label_9 = new JLabel("");
+		label_9.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_9.setBounds(118, 238, 20, 10);
+		panel.add(label_9);
+		
+		JLabel label_10 = new JLabel("");
+		label_10.setRequestFocusEnabled(false);
+		label_10.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_10.setBounds(137, 219, 10, 20);
+		panel.add(label_10);
+		
+		JLabel label_11 = new JLabel("");
+		label_11.setBounds(119, 221, 19, 18);
+		panel.add(label_11);
+		
+		JLabel label_12 = new JLabel("");
+		label_12.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_12.setBounds(535, 321, 20, 10);
+		panel.add(label_12);
+		
+		JLabel label_13 = new JLabel("");
+		label_13.setRequestFocusEnabled(false);
+		label_13.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_13.setBounds(526, 330, 10, 20);
+		panel.add(label_13);
+		
+		JLabel label_14 = new JLabel("");
+		label_14.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_14.setBounds(535, 349, 20, 10);
+		panel.add(label_14);
+		
+		JLabel label_15 = new JLabel("");
+		label_15.setRequestFocusEnabled(false);
+		label_15.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_15.setBounds(554, 330, 10, 20);
+		panel.add(label_15);
+		
+		JLabel label_16 = new JLabel("");
+		label_16.setBounds(536, 332, 20, 20);
+		panel.add(label_16);
+		
+		JLabel label_17 = new JLabel("");
+		label_17.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_17.setBounds(222, 100, 20, 10);
+		panel.add(label_17);
+		
+		JLabel label_18 = new JLabel("");
+		label_18.setRequestFocusEnabled(false);
+		label_18.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_18.setBounds(213, 109, 10, 20);
+		panel.add(label_18);
+		
+		JLabel label_19 = new JLabel("");
+		label_19.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_19.setBounds(222, 128, 20, 10);
+		panel.add(label_19);
+		
+		JLabel label_20 = new JLabel("");
+		label_20.setRequestFocusEnabled(false);
+		label_20.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_20.setBounds(241, 109, 10, 20);
+		panel.add(label_20);
+		
+		JLabel label_21 = new JLabel("");
+		label_21.setBounds(222, 110, 20, 20);
+		panel.add(label_21);
+		
+		JLabel label_22 = new JLabel("");
+		label_22.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_22.setBounds(270, 100, 20, 10);
+		panel.add(label_22);
+		
+		JLabel label_23 = new JLabel("");
+		label_23.setRequestFocusEnabled(false);
+		label_23.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_23.setBounds(261, 109, 10, 20);
+		panel.add(label_23);
+		
+		JLabel label_24 = new JLabel("");
+		label_24.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_24.setBounds(270, 128, 20, 10);
+		panel.add(label_24);
+		
+		JLabel label_25 = new JLabel("");
+		label_25.setRequestFocusEnabled(false);
+		label_25.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_25.setBounds(289, 109, 10, 20);
+		panel.add(label_25);
+		
+		JLabel label_26 = new JLabel("");
+		label_26.setBounds(270, 109, 20, 20);
+		panel.add(label_26);
+		
+		JLabel label_27 = new JLabel("");
+		label_27.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_27.setBounds(318, 100, 20, 10);
+		panel.add(label_27);
+		
+		JLabel label_28 = new JLabel("");
+		label_28.setRequestFocusEnabled(false);
+		label_28.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_28.setBounds(309, 109, 10, 20);
+		panel.add(label_28);
+		
+		JLabel label_29 = new JLabel("");
+		label_29.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_29.setBounds(318, 128, 20, 10);
+		panel.add(label_29);
+		
+		JLabel label_30 = new JLabel("");
+		label_30.setRequestFocusEnabled(false);
+		label_30.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_30.setBounds(337, 109, 10, 20);
+		panel.add(label_30);
+		
+		JLabel label_31 = new JLabel("");
+		label_31.setBounds(318, 109, 20, 20);
+		panel.add(label_31);
+		
+		JLabel label_32 = new JLabel("");
+		label_32.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_32.setBounds(366, 100, 20, 10);
+		panel.add(label_32);
+		
+		JLabel label_33 = new JLabel("");
+		label_33.setRequestFocusEnabled(false);
+		label_33.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_33.setBounds(357, 109, 10, 20);
+		panel.add(label_33);
+		
+		JLabel label_34 = new JLabel("");
+		label_34.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_34.setBounds(366, 128, 20, 10);
+		panel.add(label_34);
+		
+		JLabel label_35 = new JLabel("");
+		label_35.setRequestFocusEnabled(false);
+		label_35.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_35.setBounds(385, 109, 10, 20);
+		panel.add(label_35);
+		
+		JLabel label_36 = new JLabel("");
+		label_36.setBounds(366, 109, 20, 20);
+		panel.add(label_36);
+		
+		JLabel label_37 = new JLabel("");
+		label_37.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_37.setBounds(509, 100, 20, 10);
+		panel.add(label_37);
+		
+		JLabel label_38 = new JLabel("");
+		label_38.setRequestFocusEnabled(false);
+		label_38.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_38.setBounds(500, 109, 10, 20);
+		panel.add(label_38);
+		
+		JLabel label_39 = new JLabel("");
+		label_39.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_39.setBounds(509, 128, 20, 10);
+		panel.add(label_39);
+		
+		JLabel label_40 = new JLabel("");
+		label_40.setRequestFocusEnabled(false);
+		label_40.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.BLACK));
+		label_40.setBounds(528, 109, 10, 20);
+		panel.add(label_40);
+		
+		JLabel label_41 = new JLabel("");
+		label_41.setBounds(509, 109, 20, 20);
+		panel.add(label_41);
 		
 		JPanel medhis = new JPanel();
 		medhis.setBackground(Color.WHITE);
@@ -353,8 +542,22 @@ public class Home extends JFrame {
 		});
 		btnNewButton_3.setContentAreaFilled(false);
 		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnNewButton_3.setBounds(328, 562, 89, 23);
+		btnNewButton_3.setBounds(624, 558, 89, 23);
 		medhis.add(btnNewButton_3);
+		
+		JButton btnBack_1 = new JButton("BACK");
+		
+		btnBack_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnBack_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
+		});
+		btnBack_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnBack_1.setContentAreaFilled(false);
+		btnBack_1.setBorder(null);
+		btnBack_1.setBounds(50, 560, 89, 23);
+		medhis.add(btnBack_1);
 		medhis.setVisible(false);
 		
 		
@@ -479,6 +682,7 @@ public class Home extends JFrame {
 		basinf.add(textField_5);
 		
 		JButton btnNewButton_2 = new JButton("NEXT");
+		
 		btnNewButton_2.setBorder(null);
 		btnNewButton_2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnNewButton_2.addMouseListener(new MouseAdapter() {
@@ -490,22 +694,102 @@ public class Home extends JFrame {
 		btnNewButton_2.setContentAreaFilled(false);
 		btnNewButton_2.setOpaque(false);
 		btnNewButton_2.setBorder(null);
-		btnNewButton_2.setBounds(321, 603, 89, 23);
+		btnNewButton_2.setBounds(627, 605, 89, 23);
 		basinf.add(btnNewButton_2);
+		
+		JButton btnBack = new JButton("BACK");
+		btnBack.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnBack.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
+		});
+		
+		btnBack.setOpaque(false);
+		btnBack.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnBack.setContentAreaFilled(false);
+		btnBack.setBorder(null);
+		btnBack.setBounds(49, 607, 89, 23);
+		basinf.add(btnBack);
 		basinf.setVisible(false);
+		
+		JPanel patrec_1 = new JPanel();
+		patrec_1.setBackground(new Color(255, 255, 255));
+		patrec_1.setBounds(225, 0, 759, 661);
+		contentPane.add(patrec_1);
+		patrec_1.setLayout(null);
+		
+		JLabel label_4 = new JLabel("");
+		label_4.setIcon(new ImageIcon(Home.class.getResource("userbig3.png")));
+		label_4.setBounds(233, 48, 256, 256);
+		patrec_1.add(label_4);
+		
+		JLabel lblNewLabel_3 = new JLabel("VIEW EXISTING RECORDS");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblNewLabel_3.setBounds(171, 395, 400, 25);
+		patrec_1.add(lblNewLabel_3);
+		
+		JButton btnNewButton_4 = new JButton("");
+		btnNewButton_4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnNewButton_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+			}
+		});
+		btnNewButton_4.setBorder(null);
+		
+		btnNewButton_4.setContentAreaFilled(false);
+		btnNewButton_4.setBounds(191, 471, 357, 50);
+		patrec_1.add(btnNewButton_4);
+		
+		JLabel lblCreateNewRecord = new JLabel("CREATE NEW RECORD");
+		lblCreateNewRecord.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblCreateNewRecord.setBounds(203, 484, 400, 25);
+		patrec_1.add(lblCreateNewRecord);
+		
+		patrec_1.setVisible(false);
 		btnNewButton.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				patrec_1.show();
 			}
 		});
 		btnNewButton_4.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				basinf.show();
 				patrec_1.hide();
 			}
 		});
-		
-		
+		btnBack.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+				basinf.hide();
+				patrec_1.show();
+			}
+		});
+		btnNewButton_2.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+				medhis.show();
+				basinf.hide();
+			}
+		});
+		btnBack_1.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+				basinf.show();
+				medhis.hide();
+			}
+		});
+		btnNewButton_1.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+				basinf.hide();
+				medhis.hide();
+				patrec_1.hide();
+			}
+		});
 		setUndecorated(false);
 	}
 }
