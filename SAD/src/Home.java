@@ -214,6 +214,192 @@ public class Home extends JFrame {
 		lblNewLabel.setBounds(0, 0, 225, 661);
 		contentPane.add(lblNewLabel);
 		
+		JPanel hompag = new JPanel();
+		hompag.setFont(new Font("Tahoma", Font.BOLD, 30));
+		hompag.setBackground(Color.WHITE);
+		hompag.setBounds(225, 0, 759, 661);
+		contentPane.add(hompag);
+		hompag.setLayout(null);
+		
+		JLabel lblNewLabel_7 = new JLabel("WELCOME");
+		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblNewLabel_7.setBounds(50, 50, 175, 30);
+		hompag.add(lblNewLabel_7);
+		
+		
+		JPanel medhis = new JPanel();
+		medhis.setBackground(Color.WHITE);
+		medhis.setBounds(225, 0, 759, 661);
+		contentPane.add(medhis);
+		medhis.setLayout(null);
+		
+		JLabel lblPhysicalAndMedical = new JLabel("PHYSICAL AND MEDICAL HISTORY");
+		lblPhysicalAndMedical.setBounds(50, 50, 550, 37);
+		lblPhysicalAndMedical.setFont(new Font("Tahoma", Font.BOLD, 30));
+		medhis.add(lblPhysicalAndMedical);
+		
+		JCheckBox chckbxNewCheckBox = new JCheckBox("TONGUE");
+		chckbxNewCheckBox.setFont(new Font("Tahoma", Font.BOLD, 15));
+		chckbxNewCheckBox.setOpaque(false);
+		chckbxNewCheckBox.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		chckbxNewCheckBox.setBounds(50, 150, 97, 23);
+		medhis.add(chckbxNewCheckBox);
+		
+		JCheckBox chckbxPalate = new JCheckBox("PALATE");
+		chckbxPalate.setOpaque(false);
+		chckbxPalate.setFont(new Font("Tahoma", Font.BOLD, 15));
+		chckbxPalate.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		chckbxPalate.setBounds(50, 200, 97, 23);
+		medhis.add(chckbxPalate);
+		
+		JCheckBox chckbxTonsils = new JCheckBox("TONSILS");
+		chckbxTonsils.setOpaque(false);
+		chckbxTonsils.setFont(new Font("Tahoma", Font.BOLD, 15));
+		chckbxTonsils.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		chckbxTonsils.setBounds(50, 250, 97, 23);
+		medhis.add(chckbxTonsils);
+		
+		JCheckBox chckbxLips = new JCheckBox("LIPS");
+		chckbxLips.setOpaque(false);
+		chckbxLips.setFont(new Font("Tahoma", Font.BOLD, 15));
+		chckbxLips.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		chckbxLips.setBounds(50, 300, 97, 23);
+		medhis.add(chckbxLips);
+		
+		JCheckBox chckbxFloorOfMouth = new JCheckBox("FLOOR OF MOUTH");
+		chckbxFloorOfMouth.setOpaque(false);
+		chckbxFloorOfMouth.setFont(new Font("Tahoma", Font.BOLD, 15));
+		chckbxFloorOfMouth.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		chckbxFloorOfMouth.setBounds(50, 350, 175, 23);
+		medhis.add(chckbxFloorOfMouth);
+		
+		JCheckBox chckbxCheeks = new JCheckBox("CHEEKS");
+		chckbxCheeks.setOpaque(false);
+		chckbxCheeks.setFont(new Font("Tahoma", Font.BOLD, 15));
+		chckbxCheeks.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		chckbxCheeks.setBounds(50, 400, 175, 23);
+		medhis.add(chckbxCheeks);
+		
+		JCheckBox chckbxAllergies = new JCheckBox("ALLERGIES");
+		chckbxAllergies.setOpaque(false);
+		chckbxAllergies.setFont(new Font("Tahoma", Font.BOLD, 15));
+		chckbxAllergies.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		chckbxAllergies.setBounds(50, 450, 175, 23);
+		medhis.add(chckbxAllergies);
+		
+		JCheckBox chckbxHeartDisease = new JCheckBox("HEART DISEASE");
+		chckbxHeartDisease.setOpaque(false);
+		chckbxHeartDisease.setFont(new Font("Tahoma", Font.BOLD, 15));
+		chckbxHeartDisease.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		chckbxHeartDisease.setBounds(300, 151, 150, 23);
+		medhis.add(chckbxHeartDisease);
+		
+		JCheckBox chckbxBloodDyscracia = new JCheckBox("BLOOD DYSCRACIA");
+		chckbxBloodDyscracia.setOpaque(false);
+		chckbxBloodDyscracia.setFont(new Font("Tahoma", Font.BOLD, 15));
+		chckbxBloodDyscracia.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		chckbxBloodDyscracia.setBounds(300, 201, 175, 23);
+		medhis.add(chckbxBloodDyscracia);
+		
+		JCheckBox chckbxDiabetes = new JCheckBox("DIABETES");
+		chckbxDiabetes.setOpaque(false);
+		chckbxDiabetes.setFont(new Font("Tahoma", Font.BOLD, 15));
+		chckbxDiabetes.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		chckbxDiabetes.setBounds(300, 251, 97, 23);
+		medhis.add(chckbxDiabetes);
+		
+		JCheckBox chckbxKidney = new JCheckBox("KIDNEY");
+		chckbxKidney.setOpaque(false);
+		chckbxKidney.setFont(new Font("Tahoma", Font.BOLD, 15));
+		chckbxKidney.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		chckbxKidney.setBounds(300, 301, 97, 23);
+		medhis.add(chckbxKidney);
+		
+		JCheckBox chckbxLiver = new JCheckBox("LIVER");
+		chckbxLiver.setOpaque(false);
+		chckbxLiver.setFont(new Font("Tahoma", Font.BOLD, 15));
+		chckbxLiver.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		chckbxLiver.setBounds(300, 351, 97, 23);
+		medhis.add(chckbxLiver);
+		
+		JCheckBox chckbxOther = new JCheckBox("OTHER");
+		chckbxOther.setOpaque(false);
+		chckbxOther.setFont(new Font("Tahoma", Font.BOLD, 15));
+		chckbxOther.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		chckbxOther.setBounds(300, 401, 97, 23);
+		medhis.add(chckbxOther);
+		
+		JCheckBox chckbxHygiene = new JCheckBox("HYGIENE");
+		chckbxHygiene.setOpaque(false);
+		chckbxHygiene.setFont(new Font("Tahoma", Font.BOLD, 15));
+		chckbxHygiene.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
+		chckbxHygiene.setBounds(300, 451, 97, 23);
+		medhis.add(chckbxHygiene);
+		
+		JButton btnNewButton_3 = new JButton("NEXT");
+		
+		btnNewButton_3.setBorder(null);
+		btnNewButton_3.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnNewButton_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+			}
+		});
+		btnNewButton_3.setContentAreaFilled(false);
+		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_3.setBounds(624, 558, 89, 23);
+		medhis.add(btnNewButton_3);
+		
+		JButton btnBack_1 = new JButton("BACK");
+		
+		btnBack_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnBack_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
+		});
+		btnBack_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnBack_1.setContentAreaFilled(false);
+		btnBack_1.setBorder(null);
+		btnBack_1.setBounds(50, 560, 89, 23);
+		medhis.add(btnBack_1);
+		medhis.setVisible(false);
+		
+		
+		JPanel addsuc = new JPanel();
+		addsuc.setBorder(null);
+		addsuc.setFont(new Font("Tahoma", Font.BOLD, 15));
+		addsuc.setBackground(Color.WHITE);
+		addsuc.setBounds(225, 0, 759, 661);
+		contentPane.add(addsuc);
+		addsuc.setLayout(null);
+		
+		JLabel lblNewLabel_5 = new JLabel("");
+		lblNewLabel_5.setIcon(new ImageIcon(Home.class.getResource("check2.png")));
+		lblNewLabel_5.setBounds(251, 66, 256, 256);
+		addsuc.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("PATIENT ADDED TO DATABASE SUCCESSFULLY");
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblNewLabel_6.setBounds(27, 390, 800, 30);
+		addsuc.add(lblNewLabel_6);
+		
+		JButton btnNewButton_5 = new JButton("VIEW RECORD");
+		btnNewButton_5.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnNewButton_5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
+		});
+		btnNewButton_5.setOpaque(false);
+		btnNewButton_5.setBorderPainted(false);
+		btnNewButton_5.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_5.setContentAreaFilled(false);
+		btnNewButton_5.setBorder(new MatteBorder(0, 0, 0, 0, (Color) new Color(0, 0, 0)));
+		btnNewButton_5.setBounds(326, 481, 150, 15);
+		addsuc.add(btnNewButton_5);
+		addsuc.setVisible(false);
+		
 		
 		JPanel basinf = new JPanel();
 		basinf.setBackground(new Color(255, 255, 255));
@@ -367,144 +553,6 @@ public class Home extends JFrame {
 		basinf.add(btnBack);
 		basinf.setVisible(false);
 		
-		
-		JPanel medhis = new JPanel();
-		medhis.setBackground(Color.WHITE);
-		medhis.setBounds(225, 0, 759, 661);
-		contentPane.add(medhis);
-		medhis.setLayout(null);
-		
-		JLabel lblPhysicalAndMedical = new JLabel("PHYSICAL AND MEDICAL HISTORY");
-		lblPhysicalAndMedical.setBounds(50, 50, 550, 37);
-		lblPhysicalAndMedical.setFont(new Font("Tahoma", Font.BOLD, 30));
-		medhis.add(lblPhysicalAndMedical);
-		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("TONGUE");
-		chckbxNewCheckBox.setFont(new Font("Tahoma", Font.BOLD, 15));
-		chckbxNewCheckBox.setOpaque(false);
-		chckbxNewCheckBox.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		chckbxNewCheckBox.setBounds(50, 150, 97, 23);
-		medhis.add(chckbxNewCheckBox);
-		
-		JCheckBox chckbxPalate = new JCheckBox("PALATE");
-		chckbxPalate.setOpaque(false);
-		chckbxPalate.setFont(new Font("Tahoma", Font.BOLD, 15));
-		chckbxPalate.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		chckbxPalate.setBounds(50, 200, 97, 23);
-		medhis.add(chckbxPalate);
-		
-		JCheckBox chckbxTonsils = new JCheckBox("TONSILS");
-		chckbxTonsils.setOpaque(false);
-		chckbxTonsils.setFont(new Font("Tahoma", Font.BOLD, 15));
-		chckbxTonsils.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		chckbxTonsils.setBounds(50, 250, 97, 23);
-		medhis.add(chckbxTonsils);
-		
-		JCheckBox chckbxLips = new JCheckBox("LIPS");
-		chckbxLips.setOpaque(false);
-		chckbxLips.setFont(new Font("Tahoma", Font.BOLD, 15));
-		chckbxLips.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		chckbxLips.setBounds(50, 300, 97, 23);
-		medhis.add(chckbxLips);
-		
-		JCheckBox chckbxFloorOfMouth = new JCheckBox("FLOOR OF MOUTH");
-		chckbxFloorOfMouth.setOpaque(false);
-		chckbxFloorOfMouth.setFont(new Font("Tahoma", Font.BOLD, 15));
-		chckbxFloorOfMouth.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		chckbxFloorOfMouth.setBounds(50, 350, 175, 23);
-		medhis.add(chckbxFloorOfMouth);
-		
-		JCheckBox chckbxCheeks = new JCheckBox("CHEEKS");
-		chckbxCheeks.setOpaque(false);
-		chckbxCheeks.setFont(new Font("Tahoma", Font.BOLD, 15));
-		chckbxCheeks.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		chckbxCheeks.setBounds(50, 400, 175, 23);
-		medhis.add(chckbxCheeks);
-		
-		JCheckBox chckbxAllergies = new JCheckBox("ALLERGIES");
-		chckbxAllergies.setOpaque(false);
-		chckbxAllergies.setFont(new Font("Tahoma", Font.BOLD, 15));
-		chckbxAllergies.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		chckbxAllergies.setBounds(50, 450, 175, 23);
-		medhis.add(chckbxAllergies);
-		
-		JCheckBox chckbxHeartDisease = new JCheckBox("HEART DISEASE");
-		chckbxHeartDisease.setOpaque(false);
-		chckbxHeartDisease.setFont(new Font("Tahoma", Font.BOLD, 15));
-		chckbxHeartDisease.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		chckbxHeartDisease.setBounds(300, 151, 150, 23);
-		medhis.add(chckbxHeartDisease);
-		
-		JCheckBox chckbxBloodDyscracia = new JCheckBox("BLOOD DYSCRACIA");
-		chckbxBloodDyscracia.setOpaque(false);
-		chckbxBloodDyscracia.setFont(new Font("Tahoma", Font.BOLD, 15));
-		chckbxBloodDyscracia.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		chckbxBloodDyscracia.setBounds(300, 201, 175, 23);
-		medhis.add(chckbxBloodDyscracia);
-		
-		JCheckBox chckbxDiabetes = new JCheckBox("DIABETES");
-		chckbxDiabetes.setOpaque(false);
-		chckbxDiabetes.setFont(new Font("Tahoma", Font.BOLD, 15));
-		chckbxDiabetes.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		chckbxDiabetes.setBounds(300, 251, 97, 23);
-		medhis.add(chckbxDiabetes);
-		
-		JCheckBox chckbxKidney = new JCheckBox("KIDNEY");
-		chckbxKidney.setOpaque(false);
-		chckbxKidney.setFont(new Font("Tahoma", Font.BOLD, 15));
-		chckbxKidney.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		chckbxKidney.setBounds(300, 301, 97, 23);
-		medhis.add(chckbxKidney);
-		
-		JCheckBox chckbxLiver = new JCheckBox("LIVER");
-		chckbxLiver.setOpaque(false);
-		chckbxLiver.setFont(new Font("Tahoma", Font.BOLD, 15));
-		chckbxLiver.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		chckbxLiver.setBounds(300, 351, 97, 23);
-		medhis.add(chckbxLiver);
-		
-		JCheckBox chckbxOther = new JCheckBox("OTHER");
-		chckbxOther.setOpaque(false);
-		chckbxOther.setFont(new Font("Tahoma", Font.BOLD, 15));
-		chckbxOther.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		chckbxOther.setBounds(300, 401, 97, 23);
-		medhis.add(chckbxOther);
-		
-		JCheckBox chckbxHygiene = new JCheckBox("HYGIENE");
-		chckbxHygiene.setOpaque(false);
-		chckbxHygiene.setFont(new Font("Tahoma", Font.BOLD, 15));
-		chckbxHygiene.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 206, 209)));
-		chckbxHygiene.setBounds(300, 451, 97, 23);
-		medhis.add(chckbxHygiene);
-		
-		JButton btnNewButton_3 = new JButton("NEXT");
-		btnNewButton_3.setBorder(null);
-		btnNewButton_3.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnNewButton_3.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent arg0) {
-			}
-		});
-		btnNewButton_3.setContentAreaFilled(false);
-		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnNewButton_3.setBounds(624, 558, 89, 23);
-		medhis.add(btnNewButton_3);
-		
-		JButton btnBack_1 = new JButton("BACK");
-		
-		btnBack_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnBack_1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-			}
-		});
-		btnBack_1.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnBack_1.setContentAreaFilled(false);
-		btnBack_1.setBorder(null);
-		btnBack_1.setBounds(50, 560, 89, 23);
-		medhis.add(btnBack_1);
-		medhis.setVisible(false);
-		
 		JPanel patrec_1 = new JPanel();
 		patrec_1.setBackground(new Color(255, 255, 255));
 		patrec_1.setBounds(225, 0, 759, 661);
@@ -544,6 +592,10 @@ public class Home extends JFrame {
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				patrec_1.show();
+				basinf.hide();
+				medhis.hide();
+				addsuc.hide();
+				hompag.hide();
 			}
 		});
 		btnNewButton_4.addActionListener(new ActionListener() {
@@ -551,13 +603,7 @@ public class Home extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				basinf.show();
 				patrec_1.hide();
-			}
-		});
-		btnBack_1.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
-			public void actionPerformed(ActionEvent e) {
-				basinf.show();
-				medhis.hide();
+				hompag.hide();
 			}
 		});
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -566,6 +612,7 @@ public class Home extends JFrame {
 				basinf.hide();
 				medhis.hide();
 				patrec_1.hide();
+				hompag.show();
 			}
 		});
 		btnBack.addActionListener(new ActionListener() {
@@ -573,6 +620,7 @@ public class Home extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				basinf.hide();
 				patrec_1.show();
+				hompag.hide();
 			}
 		});
 		btnNewButton_2.addActionListener(new ActionListener() {
@@ -594,9 +642,27 @@ public class Home extends JFrame {
 					
 					medhis.show();
 					basinf.hide();
+					hompag.hide();
+					
+					
 			}
 			
 				
+		});
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				medhis.hide();
+				addsuc.show();
+				hompag.hide();
+			}
+		});
+		btnBack_1.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+				basinf.show();
+				medhis.hide();
+				hompag.hide();
+			}
 		});
 		setUndecorated(false);
 	}
